@@ -1,2 +1,2 @@
-# whatsapp-npl
+# whatsapp-nlp
 NPL whatsapp chat analysis
