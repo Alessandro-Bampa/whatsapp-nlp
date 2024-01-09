@@ -58,6 +58,7 @@
 04/01/24, 19:27 - Gabry Trama: Hai estrapolato dal backup le chat?
 04/01/24, 19:27 - Alessandro: 1) facente parte del gruppo posso scaricare la chat
 2) il sistema di cifratura funziona che se invio un messaggio naviga per la rete crittato a voi poi viene decrittato da whatsapp per farvelo leggere, così nessuno in mezzo può "sniffare" i messaggi
+nuova riga
 21/02/23, 12:14 - Nicola Parin: Un puntalino
 21/02/23, 12:14 - Gabry Trama: Sio can
 21/02/23, 12:14 - Gabry Trama: <Media omessi>

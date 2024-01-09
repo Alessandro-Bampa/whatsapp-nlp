@@ -11,7 +11,7 @@ from googletrans import Translator
 translator = Translator()
 
 # Translate the text "Hello, world!" from English to French
-translation = translator.translate("20/02/23, 14:14 - Alessandro: <Media omessi>", dest='en').text
+translation = translator.translate("21/02/23, 12:14 - Elden Ring è un videogioco per PC ?", dest='en').text
 
 print(translation)
 

@@ -1,8 +1,15 @@
-# Lancio il programma
-# Se già presente un file di output e non è forzata la traduzione recuperare deirettamente output.txt
-# mentre leggiamo il file per ripulirlo mappare il set di users
-from config import *
+from googletrans import Translator
 
-users: set
+from config import *
+from parser.whatsapp_chat_parser import WhatsappChatParser
+
+#chat_rows_list = WhatsappChatParser(INPUT_NAME, DESTINATION_PATH, OMITTED_MEDIA_STRING).parse_file()
+
+#translator = Translator()
+#print(translator.translate('Auguri peraa🥳🥳', dest='en').text)
+# translations = translator.translate(chat_rows_list, dest=TRANSLATE_TO)
+#for row in chat_rows_list:
+#    translation = translator.translate(row, dest='en')
+#    print(translation.text)
 
 
