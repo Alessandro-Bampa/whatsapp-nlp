@@ -16,30 +16,24 @@ class WhatsappChatParser:
         with open(self.file_path, 'r', encoding=self.encoding) as file:
             rows_data = []
             current_row = []
-            if write_on_file: output = open(self.dest_path, 'w+', encoding=self.encoding)
+            if write_on_file: output = open('./whatsapp_' + self.dest_path, 'w+', encoding=self.encoding)
             for line in file:
                 match = pattern.match(line)
                 # Se trova una corrispondenza con il pattern, inizia un nuovo blocco di dati
                 if match:
-
-                    # elaboro i dati del blocco precedente prima di iniziare il possimo
-                    if current_row and write_on_file:
-                        output.write(''.join(current_row) + "\n")
-
-                    #  -------------------------------------  #
-
                     # if is a Media ignore row
                     if self.omitted_media_str in line:
-                        current_row = []
                         continue
 
+                    # add to user list
                     current_user = match.group(2)
                     users_set.add(current_user)
 
-                    # Questo if ha senso solo per il primo giro
                     if current_row:
                         # add previus row to data and clean current_row
                         rows_data.append(''.join(current_row).strip())
+                        if write_on_file:
+                            output.write(''.join(current_row) + "\n")
                         current_row = []
 
                 # append current line
