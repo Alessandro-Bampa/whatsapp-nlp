@@ -50,16 +50,27 @@ class SentimentAnalysis:
     def get_wh_row_sentiment(self, row: str) -> dict:
         pattern = re.compile(r'(\d{2}/\d{2}/\d{2}, \d{2}:\d{2}) - (.*?): (.+)')
         match = pattern.match(row)
-        date_time_str = match.group(1)
-        date_obj = datetime.datetime.strptime(date_time_str, "%d/%m/%y, %H:%M")
-        # Convert the datetime object to ISO format
-        iso_date = date_obj.isoformat()
-        user = match.group(2)
-        content = match.group(3)
-        doc = self.nlp(content)
-        polarity = doc._.polarity
-        subjectivity = doc._.subjectivity
-        assessments = doc._.assessments
+        if match:
+            date_time_str = match.group(1)
+            date_obj = datetime.datetime.strptime(date_time_str, "%d/%m/%y, %H:%M")
+            # Convert the datetime object to ISO format
+            iso_date = date_obj.isoformat()
+            user = match.group(2)
+            content = match.group(3)
+            doc = self.nlp(content)
+            polarity = doc._.polarity
+            subjectivity = doc._.subjectivity
+            assessments = doc._.assessments
 
-        return {"date": iso_date, "user": user, "content": content, "polarity": polarity, "subjectivity": subjectivity,
-                "assessments": assessments}
+            return {
+                "date": iso_date,
+                "user": user,
+                "content": content,
+                "polarity": polarity,
+                "subjectivity": subjectivity,
+                "assessments": assessments
+            }
+        else:
+            # maybe raise an exception
+            # If the row doesn't match the expected format, return an empty dictionary
+            return {}

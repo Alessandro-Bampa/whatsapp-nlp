@@ -11,7 +11,7 @@ import logging
 
 wh_file_path = Path('translation/wh_translation')
 
-chat_rows_list = WhatsappChatParser(INPUT_NAME, DESTINATION_PATH, OMITTED_MEDIA_STRING).parse_file(write_on_file=True)
+chat_rows_list = WhatsappChatParser(INPUT_NAME, DESTINATION_PATH, OMITTED_MEDIA_STRING).parse_file()
 print(len(chat_rows_list))
 translator = Translator()
 
