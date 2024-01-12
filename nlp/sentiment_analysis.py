@@ -31,7 +31,7 @@ class SentimentAnalysis:
     #     "date": "2023-08-02T12:00:00",
     #     "user": "Mario Rossi",
     #     "content": "I had a really horrible day. It was the worst day ever! But every now and then I have a really good day that makes me happy.",
-    #     "popolarity": -0.125
+    #     "polarity": -0.125
     #     "Subjectivity": 0.9
     #     "sentiment": "positive"
     # }
