@@ -1,3 +1,4 @@
+import json
 import re
 
 import spacy
@@ -6,6 +7,7 @@ from pathlib import Path
 from config import *
 from nlp.sentiment_analysis import SentimentAnalysis
 from parser.whatsapp_chat_parser import WhatsappChatParser
+import matplotlib.pyplot as plt
 
 import logging
 
@@ -36,3 +38,17 @@ if FORCE_TRANSLATE or not wh_file_path.is_file():
 wh_analysis = SentimentAnalysis(wh_file_path, 'whatsapp', nlp)
 
 wh_analysis.get_sentiment()
+data_path = Path("data.json")
+
+assX = []
+assY = []
+with open(data_path) as data_file:
+    messages_data = json.load(data_file)
+    for message in messages_data:
+        assX.append(message['date'])
+        assY.append(message['polarity'])
+
+plt.xlabel('Date')
+plt.ylabel('polarity')
+plt.plot(assX, assY)
+plt.show()
