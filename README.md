@@ -1,2 +1,2 @@
 # whatsapp-nlp
-NPL whatsapp chat analysis
+Whatsapp sentiment analysis
